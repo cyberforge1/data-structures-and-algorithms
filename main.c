@@ -26,8 +26,8 @@ int* load_dataset(const char* filename, int* size) {
 }
 
 int main() {
-    const char* dataset_path = "datasets/integer_datasets/small_integer_dataset.csv";
-    int value_to_search = 627;
+    const char* dataset_path = "datasets/integer_datasets/large_integer_dataset.csv";
+    int value_to_search = 40004;
     int dataset_size;
 
     // Load dataset

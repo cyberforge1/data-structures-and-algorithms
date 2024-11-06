@@ -31,14 +31,14 @@ def main():
     algorithm_path = 'algorithms.linear_search'
     algorithm_name = 'linear_search'
     function_name = 'linear_search'
-    dataset_path = 'datasets/integer_datasets/small_integer_dataset.csv'
+    dataset_path = 'datasets/integer_datasets/large_integer_dataset.csv'
     
     # Load algorithm and dataset
     search_function = load_algorithm(algorithm_path, algorithm_name, function_name)
     dataset = load_dataset(dataset_path)
     
     # Define the value to search for
-    value_to_search = 627
+    value_to_search = 40004
     
     # Measure start time
     start_time = time.time()
