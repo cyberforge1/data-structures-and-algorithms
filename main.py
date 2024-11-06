@@ -1,49 +1,61 @@
-import os
-from algorithms.linear_search import linear_search
+import importlib
+import pandas as pd
+import time
 
-# Function to read integers from a file
-def read_integers_from_file(file_path):
+def load_algorithm(algorithm_path, algorithm_name, function_name):
     """
-    Reads a list of integers from a file, with each integer on a new line.
+    Dynamically loads a function from a specified module.
     
-    Parameters:
-    - file_path: Path to the file.
-
-    Returns:
-    - List of integers.
+    :param algorithm_path: Path to the module, e.g., 'algorithms.linear_search'
+    :param algorithm_name: The module name, e.g., 'linear_search'
+    :param function_name: The function name within the module, e.g., 'linear_search'
+    :return: The loaded function
     """
-    integers = []
-    with open(file_path, 'r') as file:
-        for line in file:
-            integers.append(int(line.strip()))
-    return integers
+    module = importlib.import_module(f"{algorithm_path}.{algorithm_name}")
+    return getattr(module, function_name)
 
-# Generic function to apply linear search to datasets
-def apply_linear_search_to_datasets(target):
+def load_dataset(dataset_path):
     """
-    Applies the linear search function to each dataset in the datasets folder.
+    Loads a dataset from a specified path.
     
-    Parameters:
-    - target: The integer to search for in each dataset.
+    :param dataset_path: Path to the CSV file.
+    :return: List of integers in the dataset.
     """
-    # Define the datasets directory
-    datasets_dir = "datasets/integer-datasets/"
-    
-    # Loop through each file in the datasets directory
-    for filename in os.listdir(datasets_dir):
-        if filename.endswith(".csv"):
-            # Construct the full path to the file
-            file_path = os.path.join(datasets_dir, filename)
-            # Load the dataset
-            integer_list = read_integers_from_file(file_path)
-            # Run linear search
-            result = linear_search(integer_list, target)
-            # Print the result
-            if result != -1:
-                print(f"Target {target} found in {filename} at index {result}.")
-            else:
-                print(f"Target {target} not found in {filename}.")
+    df = pd.read_csv(dataset_path, header=None)
+    data = df[0].tolist()  # Assumes the integers are in a single column
+    print(f"Dataset loaded from {dataset_path}. Sample data: {data[:3]}")
+    return data
 
-# Example usage
-target_value = 123  # Replace with any integer you want to search for
-apply_linear_search_to_datasets(target_value)
+def main():
+    # Define paths
+    algorithm_path = 'algorithms.linear_search'
+    algorithm_name = 'linear_search'
+    function_name = 'linear_search'
+    dataset_path = 'datasets/integer_datasets/small_integer_dataset.csv'
+    
+    # Load algorithm and dataset
+    search_function = load_algorithm(algorithm_path, algorithm_name, function_name)
+    dataset = load_dataset(dataset_path)
+    
+    # Define the value to search for
+    value_to_search = 627
+    
+    # Measure start time
+    start_time = time.time()
+    
+    # Apply algorithm
+    result = search_function(dataset, value_to_search)
+    
+    # Measure end time
+    end_time = time.time()
+    duration = end_time - start_time
+    
+    # Output result
+    if result != -1:
+        print(f"Value {value_to_search} found at index {result}")
+    else:
+        print(f"Value {value_to_search} not found")
+    print(f"Time taken: {duration:.6f} seconds")
+
+if __name__ == "__main__":
+    main()
