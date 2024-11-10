@@ -2,8 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Linear search function prototype
+// Function prototypes
 int linear_search(int arr[], int size, int x);
+int binary_search(int arr[], int size, int x);
+
+// Comparison function for qsort
+int compare(const void *a, const void *b) {
+    return (*(int*)a - *(int*)b);
+}
 
 // Dataset loading function
 int* load_dataset(const char* filename, int* size) {
@@ -26,7 +32,7 @@ int* load_dataset(const char* filename, int* size) {
 }
 
 int main() {
-    const char* dataset_path = "datasets/integer_datasets/large_integer_dataset.csv";
+    const char* dataset_path = "datasets/integer_datasets/gigantic_integer_dataset.csv";
     int value_to_search = 40004;
     int dataset_size;
 
@@ -36,11 +42,23 @@ int main() {
         return 1; // Exit if dataset loading failed
     }
 
+    // Select the search function
+    int (*search_function)(int[], int, int);
+
+    // Uncomment the desired search algorithm
+    // search_function = linear_search;
+    search_function = binary_search;
+
+    // Sort dataset if using binary search
+    if (search_function == binary_search) {
+        qsort(dataset, dataset_size, sizeof(int), compare);
+    }
+
     // Start timing
     clock_t start = clock();
 
     // Execute search
-    int result = linear_search(dataset, dataset_size, value_to_search);
+    int result = search_function(dataset, dataset_size, value_to_search);
 
     // End timing
     clock_t end = clock();
@@ -58,10 +76,3 @@ int main() {
     free(dataset);
     return 0;
 }
-
-
-// Linear search function prototype
-
-// gcc main.c algorithms/linear_search/linear_search.c -o search_program
-
-// ./search_program

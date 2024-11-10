@@ -1,4 +1,6 @@
-/* LINEAR SEARCH IN PYTHON */
+/* LINEAR SEARCH IN C */
+
+/* algorithms/linear_search/linear_search.c */
 
 #include <stdio.h>
 

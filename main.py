@@ -1,3 +1,5 @@
+# main.py
+
 import importlib
 import pandas as pd
 import time
@@ -27,11 +29,18 @@ def load_dataset(dataset_path):
     return data
 
 def main():
-    # Define paths
-    algorithm_path = 'algorithms.linear_search'
-    algorithm_name = 'linear_search'
-    function_name = 'linear_search'
-    dataset_path = 'datasets/integer_datasets/large_integer_dataset.csv'
+    # Choose algorithm type by uncommenting the desired algorithm section
+    # For linear search:
+    # algorithm_path = 'algorithms.linear_search'
+    # algorithm_name = 'linear_search'
+    # function_name = 'linear_search'
+
+    # For binary search:
+    algorithm_path = 'algorithms.binary_search'
+    algorithm_name = 'binary_search'
+    function_name = 'binary_search'
+
+    dataset_path = 'datasets/integer_datasets/gigantic_integer_dataset.csv'
     
     # Load algorithm and dataset
     search_function = load_algorithm(algorithm_path, algorithm_name, function_name)
@@ -39,6 +48,10 @@ def main():
     
     # Define the value to search for
     value_to_search = 40004
+    
+    # If using binary search, ensure the dataset is sorted
+    if function_name == 'binary_search':
+        dataset.sort()
     
     # Measure start time
     start_time = time.time()
