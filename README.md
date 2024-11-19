@@ -9,6 +9,8 @@
 - Linear Search
 - Binary Search
 
+- DFS (Depth First Search)
+
 #### Sorting
 
 
