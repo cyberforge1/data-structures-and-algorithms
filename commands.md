@@ -6,7 +6,11 @@ python main.py
 
 # Linear Search
 
+python algorithms/linear_search/python/main.py
 
+
+gcc -o algorithms/linear_search/c/main algorithms/linear_search/c/main.c algorithms/linear_search/c/linear_search.c
+./algorithms/linear_search/c/main
 
 
 # Binary Search

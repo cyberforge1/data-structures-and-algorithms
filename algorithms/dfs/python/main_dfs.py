@@ -1,4 +1,4 @@
-# algorithms/dfs/main_dfs.py
+# algorithms/dfs/python/main_dfs.py
 
 import importlib
 import pandas as pd

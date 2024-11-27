@@ -1,4 +1,4 @@
-// algorithms/dfs/dfs.c
+// algorithms/dfs/c/dfs.c
 
 #include "dfs.h"  // Include dfs.h from the same folder
 #include <stdio.h>

@@ -1,4 +1,4 @@
-# algorithms/dfs/dfs.py
+# algorithms/dfs/python/dfs.py
 
 def dfs(graph, start, visited=None):
     if visited is None:

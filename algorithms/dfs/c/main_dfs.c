@@ -1,9 +1,10 @@
+// algorithms/dfs/c/main_dfs.c
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include "dfs.h"  // Include dfs.h from the same folder
-
 
 #define MAX_LINE_LENGTH 1024
 #define MAX_NODES 100
