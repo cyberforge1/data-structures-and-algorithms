@@ -1,25 +1,18 @@
 source venv/bin/activate
 
-pip install pandas
+# Binary Search
 
-python main.py
+python algorithms/binary_search/python/main.py
+
+gcc -o algorithms/binary_search/c/main algorithms/binary_search/c/main.c algorithms/binary_search/c/binary_search.c
+./algorithms/binary_search/c/main
 
 # Linear Search
 
 python algorithms/linear_search/python/main.py
 
-
 gcc -o algorithms/linear_search/c/main algorithms/linear_search/c/main.c algorithms/linear_search/c/linear_search.c
 ./algorithms/linear_search/c/main
-
-
-# Binary Search
-
-python algorithms/binary_search/python/main.py
-
-
-gcc -o algorithms/binary_search/c/main algorithms/binary_search/c/main.c algorithms/binary_search/c/binary_search.c
-./algorithms/binary_search/c/main
 
 
 

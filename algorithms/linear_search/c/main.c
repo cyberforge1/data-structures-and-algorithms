@@ -2,42 +2,42 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>  // For runtime measurement
+#include <time.h>
 #include "linear_search.h"
 
-#define MAX_SIZE 1000  // Maximum dataset size
-
-// Function to load dataset from a CSV file
-int load_dataset(const char *file_path, int *arr) {
-    FILE *file = fopen(file_path, "r");
+int main() {
+    // Correct dataset path
+    const char *dataset_path = "datasets/integer_datasets/non-sorted/gigantic_integer_dataset.csv";
+    FILE *file = fopen(dataset_path, "r");
     if (file == NULL) {
         perror("Failed to open dataset file");
-        exit(EXIT_FAILURE);
+        return EXIT_FAILURE;
     }
 
-    int count = 0;
-    while (fscanf(file, "%d,", &arr[count]) != EOF && count < MAX_SIZE) {
-        count++;
-    }
-
-    fclose(file);
-    return count;  // Return the number of elements loaded
-}
-
-int main() {
-    // Update the dataset path to the absolute or correct relative path
-    const char *dataset_path = "datasets/integer_datasets/gigantic_integer_dataset.csv";
-    int data[MAX_SIZE];
-    int size = load_dataset(dataset_path, data);
-
-    int target = 1;  // Search target is now always 1
+    int target = 15392;  // Search target
     printf("Searching for %d in the dataset...\n", target);
 
     // Measure runtime
     clock_t start_time = clock();
 
-    // Perform linear search
-    int result = linear_search(data, size, target);
+    // Perform linear search directly from the file
+    int index = 0;
+    int temp;
+    int result = -1;
+    while (fscanf(file, "%d,", &temp) == 1) {
+        if (temp == target) {
+            result = index;
+            break;  // Element found
+        }
+        index++;
+    }
+    if (ferror(file)) {
+        perror("Error reading the dataset file during search");
+        fclose(file);
+        return EXIT_FAILURE;
+    }
+
+    fclose(file);
 
     clock_t end_time = clock();
     double runtime = (double)(end_time - start_time) / CLOCKS_PER_SEC;
