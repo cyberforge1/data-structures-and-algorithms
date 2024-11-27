@@ -1,11 +1,11 @@
-// algorithms/linear_search/c/main.c
+// algorithms/binary_search/c/main.c
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>  // For runtime measurement
-#include "linear_search.h"
+#include <time.h>
+#include "binary_search.h"
 
-#define MAX_SIZE 1000  // Maximum dataset size
+#define MAX_SIZE 1000
 
 // Function to load dataset from a CSV file
 int load_dataset(const char *file_path, int *arr) {
@@ -25,19 +25,18 @@ int load_dataset(const char *file_path, int *arr) {
 }
 
 int main() {
-    // Update the dataset path to the absolute or correct relative path
     const char *dataset_path = "datasets/integer_datasets/gigantic_integer_dataset.csv";
     int data[MAX_SIZE];
     int size = load_dataset(dataset_path, data);
 
-    int target = 1;  // Search target is now always 1
+    int target = 1;  // Search target is now 1
     printf("Searching for %d in the dataset...\n", target);
 
     // Measure runtime
     clock_t start_time = clock();
 
-    // Perform linear search
-    int result = linear_search(data, size, target);
+    // Perform binary search
+    int result = binary_search(data, size, target);
 
     clock_t end_time = clock();
     double runtime = (double)(end_time - start_time) / CLOCKS_PER_SEC;

@@ -1,9 +1,9 @@
-# algorithms/linear_search/python/main.py
+# algorithms/binary_search/python/main.py
 
 import csv
 import os
 import time
-from linear_search import linear_search
+from binary_search import binary_search
 
 def load_dataset(file_path):
     """Load a dataset from a CSV file."""
@@ -14,7 +14,7 @@ def load_dataset(file_path):
             return [int(item) for item in row]
 
 def main():
-    # Dynamically construct the absolute path to the dataset
+    # Correct dataset path
     current_dir = os.path.dirname(os.path.abspath(__file__))
     dataset_path = os.path.join(current_dir, "../../../datasets/integer_datasets/gigantic_integer_dataset.csv")
 
@@ -22,15 +22,15 @@ def main():
     print(f"Loading dataset from: {dataset_path}")
     data = load_dataset(dataset_path)
 
-    # Element to search for
-    target = 1  # Search target is now always 1
+    # Search target is now always 1
+    target = 1
     print(f"Searching for {target} in the dataset...")
 
     # Measure runtime
     start_time = time.time()
 
-    # Perform linear search
-    result = linear_search(data, target)
+    # Perform binary search
+    result = binary_search(data, target)
 
     end_time = time.time()
     runtime = end_time - start_time
