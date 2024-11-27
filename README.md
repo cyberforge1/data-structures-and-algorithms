@@ -19,7 +19,7 @@
 
 ### Data Sets
 
-- Integer Datasets
+- Integer Datasets (sorted & unsorted)
 - Graph Datasets
 - NLP Datasets
 - String Datasets
