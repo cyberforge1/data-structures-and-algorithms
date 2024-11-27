@@ -4,16 +4,20 @@ pip install pandas
 
 python main.py
 
-
-# Running main.c
-
-gcc -DUSE_BINARY_SEARCH main.c algorithms/binary_search/binary_search.c -o search_program
-
-
-gcc main.c algorithms/linear_search/linear_search.c -o search_program
-./search_program
+# Linear Search
 
 
 
-gcc dfs.c -o dfs
-./dfs
+
+# Binary Search
+
+
+
+
+# DFS
+
+python -m algorithms.dfs.python.main_dfs
+
+gcc -o algorithms/dfs/c/main_dfs algorithms/dfs/c/main_dfs.c algorithms/dfs/c/dfs.c
+./algorithms/dfs/c/main_dfs
+

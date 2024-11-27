@@ -33,10 +33,10 @@ def load_graph_dataset(dataset_path):
 
 
 def main():
-    algorithm_path = 'algorithms.dfs'
+    algorithm_path = 'algorithms.dfs.python'
     algorithm_name = 'dfs'
     function_name = 'dfs'
-    dataset_path = 'datasets/graph_datasets/large_graph_dataset.csv'
+    dataset_path = 'datasets/graph_datasets/gigantic_graph_dataset.csv'
 
     dfs_function = load_algorithm(algorithm_path, algorithm_name, function_name)
     graph = load_graph_dataset(dataset_path)
