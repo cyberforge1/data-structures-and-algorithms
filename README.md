@@ -6,27 +6,27 @@
 
 
 #### Searching
-[x] Linear Search
-[x] Binary Search
-[x] DFS (Depth First Search)
-[x] BFS (Breadth First Search)
+- [x] Linear Search
+- [x] Binary Search
+- [x] DFS (Depth First Search)
+- [x] BFS (Breadth First Search)
 
 #### Sorting
 
-[ ] Insertion Sort
-[ ] Bubble Sort
-[ ] Merge Sort
-[ ] Heapsort
-[ ] Quicksort
-[ ] Selection Sort
+- [ ] Insertion Sort
+- [ ] Bubble Sort
+- [ ] Merge Sort
+- [ ] Heapsort
+- [ ] Quicksort
+- [ ] Selection Sort
 
 ### Data Structures
 
-[ ] Linked List
-[ ] Stack
-[ ] Queue
-[ ] Hash Table
-[ ] Binary Search Tree (BST)
+- [ ] Linked List
+- [ ] Stack
+- [ ] Queue
+- [ ] Hash Table
+- [ ] Binary Search Tree (BST)
 
 ### Data Sets
 
