@@ -1,11 +1,13 @@
 source venv/bin/activate
 
+
 # Binary Search
 
 python algorithms/binary_search/python/main.py
 
 gcc -o algorithms/binary_search/c/main algorithms/binary_search/c/main.c algorithms/binary_search/c/binary_search.c
 ./algorithms/binary_search/c/main
+
 
 # Linear Search
 
@@ -15,7 +17,6 @@ gcc -o algorithms/linear_search/c/main algorithms/linear_search/c/main.c algorit
 ./algorithms/linear_search/c/main
 
 
-
 # DFS
 
 python -m algorithms.dfs.python.main_dfs
@@ -23,3 +24,10 @@ python -m algorithms.dfs.python.main_dfs
 gcc -o algorithms/dfs/c/main_dfs algorithms/dfs/c/main_dfs.c algorithms/dfs/c/dfs.c
 ./algorithms/dfs/c/main_dfs
 
+
+# BFS
+
+python -m algorithms.bfs.python.main_bfs
+
+gcc -o algorithms/bfs/c/main_bfs algorithms/bfs/c/main_bfs.c algorithms/bfs/c/bfs.c
+./algorithms/bfs/c/main_bfs
