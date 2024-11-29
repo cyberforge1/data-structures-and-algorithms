@@ -16,7 +16,6 @@
 - Insertion Sort
 - Bubble Sort
 - Merge Sort
-
 - Heapsort
 - Quicksort
 - Selection Sort
