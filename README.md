@@ -8,12 +8,18 @@
 #### Searching
 - Linear Search
 - Binary Search
-
 - DFS (Depth First Search)
 - BFS (Breadth First Search)
 
 #### Sorting
 
+- Insertion Sort
+- Bubble Sort
+- Merge Sort
+
+- Heapsort
+- Quicksort
+- Selection Sort
 
 ### Data Structures
 
