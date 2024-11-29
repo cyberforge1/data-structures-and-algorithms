@@ -10,6 +10,7 @@
 - Binary Search
 
 - DFS (Depth First Search)
+- BFS (Breadth First Search)
 
 #### Sorting
 
