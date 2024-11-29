@@ -23,6 +23,11 @@
 
 ### Data Structures
 
+- Linked List
+- Stack
+- Queue
+- Hash Table
+- Binary Search Tree (BST)
 
 ### Data Sets
 
